@@ -94,7 +94,7 @@ public class Principal extends javax.swing.JFrame {
         String servico = "java:global/Web-Calc/CalculadoraImp";
         calc = service.lookup(servico, CalculadoraIF.class);
 //        JOptionPane.showConfirmDialog(this, "resultado: " + (n1 * n2));
-        JOptionPane.showConfirmDialog(this, "resultado: " + calc.dividir(n1, n2));
+        JOptionPane.showMessageDialog(this, "resultado: " + calc.dividir(n1, n2));
     }//GEN-LAST:event_jButtonDividirActionPerformed
 
     private void jButtonMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicarActionPerformed
@@ -103,7 +103,7 @@ public class Principal extends javax.swing.JFrame {
         serviceLocator service = new serviceLocator();
         String servico = "java:global/Web-Calc/CalculadoraImp";
         calc = service.lookup(servico, CalculadoraIF.class);
-        JOptionPane.showConfirmDialog(this, "resultado: " + calc.multiplicar(n1, n2));
+        JOptionPane.showMessageDialog(this, "resultado: " + calc.multiplicar(n1, n2));
 //        JOptionPane.showConfirmDialog(this, "resultado: " + (n1 * n2));
     }//GEN-LAST:event_jButtonMultiplicarActionPerformed
 
