@@ -12,7 +12,7 @@
         <title>Página Inicial</title>
     </head>
     <body>
-        <form name="form" action="show" method="post">
+        <form name="form" action="show" method="get">
         <label>Valor 1:</label>
         <input type="text" name="valor1">
         
