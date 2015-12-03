@@ -26,10 +26,12 @@ public class serviceLocator {
             props.setProperty("org.omg.CORBA.ORBInitalHost", "Loclhost");
             props.setProperty("org.omg.CORBA.ORBInitalPort", "3700");
             InitialContext context = new InitialContext(props);
-            return <T> context.lookup(recurso);
+            return (T) context.lookup(recurso);
         } catch (NamingException ex) {
             Logger.getLogger(serviceLocator.class.getName()).log(Level.SEVERE, null, ex);
             
         }
+        
+        return null;
     }
 }
