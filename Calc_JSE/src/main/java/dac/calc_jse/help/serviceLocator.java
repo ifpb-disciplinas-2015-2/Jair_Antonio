@@ -18,7 +18,7 @@ import javax.naming.NamingException;
  */
 public class serviceLocator {
 
-    protected <T> T lookup(String recurso, Class<T> tipo) {
+    public <T> T lookup(String recurso, Class<T> tipo) {
         try {
             Properties props = new Properties();
             props.put(Context.INITIAL_CONTEXT_FACTORY,

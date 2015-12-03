@@ -5,6 +5,7 @@
  */
 package dac.calc_jse;
 
+import dac.calc_jse.help.serviceLocator;
 import dac.mavenproject2.CalculadoraIF;
 import javax.ejb.EJB;
 import javax.swing.JOptionPane;
@@ -18,7 +19,6 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    @EJB
     private CalculadoraIF calc;
 
     public Principal() {
@@ -91,15 +91,21 @@ public class Principal extends javax.swing.JFrame {
     private void jButtonDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDividirActionPerformed
         int n1 = Integer.parseInt(jTextFieldN1.getText());
         int n2 = Integer.parseInt(jTextFieldN2.getText());
-        JOptionPane.showConfirmDialog(this, "resultado: " + (n1 * n2));
-//        JOptionPane.showConfirmDialog(this, "resultado: " + calc.dividir(n1, n2));
+        serviceLocator service = new serviceLocator();
+        String servico = "java:global/web-Calc/CalculadoraImp";
+        calc = service.lookup(servico, CalculadoraIF.class);
+//        JOptionPane.showConfirmDialog(this, "resultado: " + (n1 * n2));
+        JOptionPane.showConfirmDialog(this, "resultado: " + calc.dividir(n1, n2));
     }//GEN-LAST:event_jButtonDividirActionPerformed
 
     private void jButtonMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicarActionPerformed
         int n1 = Integer.parseInt(jTextFieldN1.getText());
         int n2 = Integer.parseInt(jTextFieldN2.getText());
-//        JOptionPane.showConfirmDialog(this, "resultado: " + calc.multiplicar(n1, n2));
-        JOptionPane.showConfirmDialog(this, "resultado: " + (n1 * n2));
+        serviceLocator service = new serviceLocator();
+        String servico = "java:global/web-Calc/CalculadoraImp";
+        calc = service.lookup(servico, CalculadoraIF.class);
+        JOptionPane.showConfirmDialog(this, "resultado: " + calc.multiplicar(n1, n2));
+//        JOptionPane.showConfirmDialog(this, "resultado: " + (n1 * n2));
     }//GEN-LAST:event_jButtonMultiplicarActionPerformed
 
     /**
