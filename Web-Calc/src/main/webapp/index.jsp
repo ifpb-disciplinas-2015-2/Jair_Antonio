@@ -12,7 +12,7 @@
         <title>Página Inicial</title>
     </head>
     <body>
-    
+        <form name="form" action="show" method="post">
         <label>Valor 1:</label>
         <input type="text" name="valor1">
         
@@ -24,6 +24,6 @@
         <br>
         
         <input type="submit" value="Enviar">
-    
+        </form>
     </body>
 </html>
