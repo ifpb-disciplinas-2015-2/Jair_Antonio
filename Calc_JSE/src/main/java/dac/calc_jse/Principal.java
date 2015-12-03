@@ -7,7 +7,6 @@ package dac.calc_jse;
 
 import dac.calc_jse.help.serviceLocator;
 import dac.mavenproject2.CalculadoraIF;
-import javax.ejb.EJB;
 import javax.swing.JOptionPane;
 
 /**
@@ -92,7 +91,7 @@ public class Principal extends javax.swing.JFrame {
         int n1 = Integer.parseInt(jTextFieldN1.getText());
         int n2 = Integer.parseInt(jTextFieldN2.getText());
         serviceLocator service = new serviceLocator();
-        String servico = "java:global/web-Calc/CalculadoraImp";
+        String servico = "java:global/Web-Calc/CalculadoraImp";
         calc = service.lookup(servico, CalculadoraIF.class);
 //        JOptionPane.showConfirmDialog(this, "resultado: " + (n1 * n2));
         JOptionPane.showConfirmDialog(this, "resultado: " + calc.dividir(n1, n2));
@@ -102,7 +101,7 @@ public class Principal extends javax.swing.JFrame {
         int n1 = Integer.parseInt(jTextFieldN1.getText());
         int n2 = Integer.parseInt(jTextFieldN2.getText());
         serviceLocator service = new serviceLocator();
-        String servico = "java:global/web-Calc/CalculadoraImp";
+        String servico = "java:global/Web-Calc/CalculadoraImp";
         calc = service.lookup(servico, CalculadoraIF.class);
         JOptionPane.showConfirmDialog(this, "resultado: " + calc.multiplicar(n1, n2));
 //        JOptionPane.showConfirmDialog(this, "resultado: " + (n1 * n2));
