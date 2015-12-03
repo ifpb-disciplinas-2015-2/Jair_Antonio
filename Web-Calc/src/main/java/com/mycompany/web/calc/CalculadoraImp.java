@@ -5,6 +5,7 @@
  */
 package com.mycompany.web.calc;
 
+import dac.mavenproject2.CalculadoraIF;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
@@ -13,8 +14,8 @@ import javax.ejb.Stateless;
  * @author Anderson Souza
  */
 @Stateless
-@Remote
-public class CalculadoraImp {
+@Remote(CalculadoraIF.class)
+public class CalculadoraImp implements CalculadoraIF {
     
     public double multiplicar(int n1, int n2){
         return n1 * n2;

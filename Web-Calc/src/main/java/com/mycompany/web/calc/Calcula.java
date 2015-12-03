@@ -1,5 +1,6 @@
 package com.mycompany.web.calc;
 
+import dac.mavenproject2.CalculadoraIF;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -14,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet (urlPatterns = {"/show"})
 public class Calcula extends HttpServlet {
-    
-    private CalculadoraImp calculadora;
+    @EJB
+    private CalculadoraIF calculadora;
     
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
